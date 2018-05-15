@@ -1,0 +1,22 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* Hides tab bar*/
+#TabsToolbar { visibility: collapse; }
+
+/* Hide sidebar header */
+#sidebar-header { visibility: collapse; }
+
+#sidebar {
+	min-width: 0px !important;
+}
+
+
+/* https://www.reddit.com/r/firefox/comments/68jimo */
+#main-window[privatebrowsingmode="temporary"] #navigator-toolbox {
+   background-color: #CE85FF !important;
+}
+
+/* https://www.reddit.com/r/FirefoxCSS/comments/7emhsq */
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] + #sidebar-splitter {
+	width:1px !important;
+}

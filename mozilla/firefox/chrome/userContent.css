@@ -1,0 +1,9 @@
+@-moz-document domain(twitter.com) {
+	.avatar { border-radius: 0px !important; }
+	.ProfileCard-avatarImage { border-radius: 0px !important; }
+}
+
+@-moz-document domain(medium.com) {
+	div.metabar { visibility: collapse; }
+	div.js-stickyFooter { visibility: collapse; }
+}
