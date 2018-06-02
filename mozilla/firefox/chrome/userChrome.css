@@ -15,6 +15,11 @@
 #main-window[privatebrowsingmode="temporary"] #navigator-toolbox {
    background-color: #CE85FF !important;
 }
+#main-window[privatebrowsingmode="temporary"] #nav-bar{
+	/*  might try #8d20ae */
+	background-color: #CE85FF !important;
+}
+
 
 /* https://www.reddit.com/r/FirefoxCSS/comments/7emhsq */
 #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] + #sidebar-splitter {
