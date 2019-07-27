@@ -1,6 +1,21 @@
 @-moz-document domain(twitter.com) {
 	.avatar { border-radius: 0px !important; }
 	.ProfileCard-avatarImage { border-radius: 0px !important; }
+	.EdgeButton { border-radius: 0px !important; }
+    [data-testid="sidebarColumn"] { /* hide sidebar */
+        display:none !important;
+    }
+    .r-sdzlij { /* avator icon */
+        border-radius: 0px !important;
+    }
+    .r-t23y2h { /* new tweet */
+        border-radius: 0px !important;
+    }
+    .r-1ye8kvj { /* timeline */
+        max-width: 100% !important;
+    }
+	html { border-radius: 0px !important; }
+    textarea {background-color:red !important; }
 }
 
 @-moz-document domain(medium.com) {
