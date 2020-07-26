@@ -1,0 +1,29 @@
+{
+  "autoCollapseExpandSubtreeOnAttach": false,
+  "autoCollapseExpandSubtreeOnSelect": false,
+  "autoGroupNewTabsFromPinned": false,
+  "autoGroupNewTabsTimeout": 0,
+  "closeParentBehaviorMode": 1,
+  "configsVersion": 10,
+  "lastConfirmedToCloseTabs": 1532179837376,
+  "lastDraggedTabs": {
+    "tabIds": [
+      356
+    ],
+    "urlsDigest": "3c4fd307aff9b74700d3eece2a7b89942cd95cfb"
+  },
+  "notifiedFeaturesVersion": 4,
+  "optionsExpandedSections": [
+    "section-contextMenu",
+    "section-newTab",
+    "section-treeBehavior",
+    "section-shortcuts",
+    "section-advanced",
+    "section-addons",
+    "section-debug",
+    "section-appearance"
+  ],
+  "style": "plain",
+  "userStyleRules": "/* Show title of unread tabs with red and italic font */\n/*\n.tab.unread .label {\n  color: red !important;\n  font-style: italic !important;\n}\n*/\n\n/* Add private browsing indicator per tab */\n/*\n.tab.private-browsing .label:before {\n  content: \"🕶\";\n}\n*/\n.tab.active {\n  background-color: #88aa88;\n}\n/* .tab.active .label {\n\n  font-size: 14px;\n} */\n.tab.active .twisty,\n.tab.active .label,\n.tab.active .counter {\n  color: #fff;\n}",
+  "warnOnAutoGroupNewTabs": false
+}
