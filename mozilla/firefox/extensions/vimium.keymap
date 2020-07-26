@@ -1,0 +1,14 @@
+# Insert your preferred key mappings here.
+unmap J
+unmap K
+map J nextTab
+map K previousTab
+
+map gf LinkHints.activateModeToOpenInNewForegroundTab
+map gp LinkHints.activateModeToOpenIncognito
+
+unmap d
+unmap x
+map dd removeTab
+unmap u
+map u restoreTab
