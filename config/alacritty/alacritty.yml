@@ -583,7 +583,9 @@ live_config_reload: true
 #
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
-#key_bindings:
+key_bindings:
+  - { key: Add,      mods: Control|Shift,                 action: IncreaseFontSize }
+  - { key: Subtract, mods: Control|Shift,                 action: DecreaseFontSize }
   #- { key: Paste,                                action: Paste          }
   #- { key: Copy,                                 action: Copy           }
   #- { key: L,         mods: Control,             action: ClearLogNotice }
