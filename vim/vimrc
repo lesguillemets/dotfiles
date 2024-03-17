@@ -1,0 +1,9 @@
+set list listchars=tab:>-,extends:\\u00bb,precedes:\\u00ab,eol:\\u21b5
+
+" miv
+filetype off
+if has('vim_starting')
+	set rtp^=~/.vim/miv/miv
+endif
+filetype plugin indent on
+syntax enable
