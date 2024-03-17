@@ -1,4 +1,23 @@
-set list listchars=tab:>-,extends:\\u00bb,precedes:\\u00ab,eol:\\u21b5
+" defaults.vim
+set list listchars=tab:>-,extends:\\u00bb,precedes:\\u00ab,eol:\\u21b5,nbsp:~
+set backspace=start
+set number relativenumber
+
+set history=500
+set ruler
+
+set showcmd " show currently typed command (as in y)
+set wildmenu
+
+" timeout for mapping delay, ttimeout for key code delay
+set timeout ttimeout timeoutlen=2000 ttimeoutlen=50
+
+set display=lastline  " defaults.vim sets it to truncate but this seems to make more sense
+set scrolloff=2
+
+set hlsearch incsearch
+
+set nrformats-=octal nrformats+=unsigned
 
 " miv
 filetype off
