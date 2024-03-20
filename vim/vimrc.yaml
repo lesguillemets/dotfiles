@@ -87,6 +87,8 @@ plugin:
       augroup END
 
 
+  rhysd/committia.vim: {}
+
   nanotech/jellybeans.vim:
     after: |
       let g:jellybeans_use_term_italics = 1
