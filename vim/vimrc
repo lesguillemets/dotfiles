@@ -19,6 +19,12 @@ set hlsearch incsearch
 
 set nrformats-=octal nrformats+=unsigned
 
+augroup MiVLive
+	autocmd!
+	autocmd BufWritePost .vimrc.yaml call system('miv generate')
+	autocmd BufWritePost vimrc.yaml call system('miv generate')
+augroup END
+
 " miv
 filetype off
 if has('vim_starting')
