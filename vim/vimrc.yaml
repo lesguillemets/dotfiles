@@ -73,3 +73,16 @@ plugin:
     dependon:
       - asyncomplete
       - lsp
+
+  mattn/emmet-vim:
+    filetype:
+      - html
+      - css
+    before: |
+      let g:user_emmet_install_global = 0
+      augroup EMMET
+      autocmd!
+      autocmd FileType html,css EmmetInstall
+      augroup END
+
+
