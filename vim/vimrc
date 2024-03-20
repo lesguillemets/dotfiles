@@ -23,6 +23,8 @@ set wildmode=longest:list,full
 
 set ignorecase smartcase
 
+nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
+
 augroup MiVLive
 	autocmd!
 	autocmd BufWritePost .vimrc.yaml call system('miv generate')
