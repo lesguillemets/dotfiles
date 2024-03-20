@@ -19,6 +19,10 @@ set hlsearch incsearch
 
 set nrformats-=octal nrformats+=unsigned
 
+set wildmode=longest:list,full
+
+set ignorecase smartcase
+
 augroup MiVLive
 	autocmd!
 	autocmd BufWritePost .vimrc.yaml call system('miv generate')
