@@ -87,3 +87,21 @@ plugin:
       augroup END
 
 
+  nanotech/jellybeans.vim:
+    after: |
+      let g:jellybeans_use_term_italics = 1
+      let g:jellybeans_overrides = {'background': { 'ctermbg': 'none', '256ctermbg': 'none' }}
+      if has('termguicolors') && &termguicolors
+          let g:jellybeans_overrides['background']['guibg'] = 'none'
+      endif
+      augroup JellyJelly
+        autocmd!
+        autocmd GUIEnter let g:jellybeans_overrides['background'] = {}
+      augroup END
+  sainnhe/everforest:
+    after: |
+      let g:everforest_transparent_background=1
+
+
+after: |
+  colorscheme jellybeans

@@ -25,6 +25,10 @@ set ignorecase smartcase
 
 nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
 
+if has('termguicolors')
+    set termguicolors
+endif
+
 augroup MiVLive
 	autocmd!
 	autocmd BufWritePost .vimrc.yaml call system('miv generate')
