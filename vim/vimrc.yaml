@@ -75,6 +75,20 @@ plugin:
       - asyncomplete
       - lsp
 
+  ctrlpvim/ctrlp.vim:
+    before: |
+      let g:ctrlp_follow_symlinks = 1
+      let g:ctrlp_custom_ignore = {}
+      let g:ctrlp_custom_ignore.file = '\v\.(hi|o|out|jsmod|vo|v\.d|glob|pyc)$'
+      let g:ctrlp_custom_ignore.dir = '\v[\/](\.stack-work|target|\.cabal-sandbox)$'
+      let g:ctrlp_show_hidden = 1
+
+  mattn/ctrlp-matchfuzzy:
+    dependon:
+      - ctrlp
+    after: |
+      let g:ctrlp_match_func = {'match': 'ctrlp_matchfuzzy#matcher'}
+
   mattn/emmet-vim:
     filetype:
       - html
