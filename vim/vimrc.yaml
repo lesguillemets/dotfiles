@@ -103,6 +103,12 @@ plugin:
 
   rhysd/committia.vim: {}
 
+  itchyny/lightline.vim:
+    before: |
+      let g:lightline = {
+        \ 'colorscheme': 'jellybeans',
+        \ }
+
   nanotech/jellybeans.vim:
     after: |
       let g:jellybeans_use_term_italics = 1
