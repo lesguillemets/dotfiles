@@ -24,6 +24,7 @@ set wildmode=longest:list,full
 set ignorecase smartcase
 
 nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
+nnoremap <silent> <F1> <Nop>
 
 if has('termguicolors')
     set termguicolors
