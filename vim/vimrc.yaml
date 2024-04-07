@@ -47,6 +47,7 @@ plugin:
   prabirshrestha/vim-lsp:
     dependon:
       - asyncomplete
+      - vim-lsp-ale
     after: |
       function! s:on_lsp_buffer_enabled() abort
           setlocal omnifunc=lsp#complete
@@ -74,6 +75,24 @@ plugin:
     dependon:
       - asyncomplete
       - lsp
+
+
+  dense-analysis/ale:
+    dependon:
+      - vim-lsp-ale
+    before: |
+      let g:ale_cursor_detail = 1
+      let g:ale_floating_preview = 0
+      let g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰', '│', '─']
+      let g:ale_keep_list_window_open = 1
+      let g:ale_open_list = 1
+
+  rhysd/vim-lsp-ale:
+    loadbefore:
+      - ale
+      - lsp
+
+
 
   ctrlpvim/ctrlp.vim:
     before: |

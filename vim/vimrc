@@ -25,6 +25,8 @@ set ignorecase smartcase
 
 set laststatus=2
 
+set splitright splitbelow
+
 nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
 nnoremap <silent> <F1> <Nop>
 
