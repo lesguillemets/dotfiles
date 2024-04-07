@@ -119,6 +119,10 @@ plugin:
       autocmd FileType html,css EmmetInstall
       augroup END
 
+  rust-lang/rust.vim:
+    before: |
+      let g:rustfmt_autosave = 1
+
 
   rhysd/committia.vim: {}
 
