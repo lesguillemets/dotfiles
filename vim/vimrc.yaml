@@ -152,6 +152,8 @@ after: |
   colorscheme jellybeans
 
 filetype:
+  rust: |
+    inoremap <C-l> ->
   html: |
     setlocal noexpandtab
     setlocal ts=2 sts=2 sw=2 
