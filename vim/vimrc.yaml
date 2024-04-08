@@ -92,7 +92,7 @@ plugin:
       - ale
       - lsp
 
-
+  cohama/lexima.vim: {}
 
   ctrlpvim/ctrlp.vim:
     before: |
