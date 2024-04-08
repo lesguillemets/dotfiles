@@ -1,5 +1,13 @@
+augroup VIMRC
+	autocmd!
+augroup END
+
 " defaults.vim
 set list listchars=tab:>-,extends:\\u00bb,precedes:\\u00ab,eol:\\u21b5,nbsp:~
+
+augroup VIMRC
+	autocmd BufEnter * execute 'setlocal listchars=tab:>-,extends:\\u00bb,precedes:\\u00ab,eol:\\u21b5,nbsp:~,multispace:┆' . repeat('\ ', &sw - 1)
+augroup END
 set backspace=start
 set number relativenumber
 
