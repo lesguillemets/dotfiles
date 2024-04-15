@@ -147,6 +147,8 @@ plugin:
     after: |
       let g:everforest_transparent_background=1
 
+  rhysd/vim-color-spring-night: {}
+  preservim/vim-colors-pencil: {}
 
 after: |
   colorscheme jellybeans
