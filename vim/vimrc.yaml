@@ -104,6 +104,8 @@ plugin:
     after: |
       let g:highlightedyank_highlight_duration=60
 
+  kshenoy/vim-signature: {}
+
   luochen1990/rainbow:
     before: |
       let g:rainbow_active = 1
@@ -113,6 +115,28 @@ plugin:
        \ "parentheses_options": "",
        \ "guifgs": ["CadetBlue2", "LightBlue2", "Violet", "khaki2", "PaleGreen2", "tomato2"]
        \ }
+
+  kana/vim-repeat: {}
+
+  tyru/caw.vim:
+    dependon: repeat
+    after: |
+      nmap <Leader>c <Plug>(caw:hatpos:toggle)
+      vmap <Leader>c <Plug>(caw:hatpos:toggle)
+
+  # let's see how this compares to rhysd/vim-operator-surround
+  machakann/vim-sandwich: {}
+
+  ## Textobjs
+  kana/vim-textobj-user: {}
+  rhysd/vim-textobj-wiw:
+    dependon: textobj-user
+    mapmode:
+      - o
+      - v
+    mapping:
+      - am
+      - im
 
   easymotion/vim-easymotion:
     filetype:
@@ -128,6 +152,8 @@ plugin:
       let g:EasyMotion_use_migemo = 1
       let g:EasyMotion_smartcase = 1
       let g:EasyMotion_startofline = 0
+
+  mhinz/vim-signify: {}
 
   ## Browsing
   ctrlpvim/ctrlp.vim:
