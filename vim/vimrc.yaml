@@ -137,7 +137,13 @@ plugin:
       let g:rustfmt_autosave = 1
 
 
-  rhysd/committia.vim: {}
+  rhysd/committia.vim:
+    after: |
+      let g:committia_hooks = {}
+      function! g:committia_hooks.edit_open(info)
+        setlocal spell
+      endfunction
+
 
   # >>>
 
