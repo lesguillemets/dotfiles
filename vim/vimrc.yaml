@@ -167,7 +167,7 @@ after: |
 
 filetype:
   rust: |
-    inoremap <C-l> ->
+    inoremap <C-l> <Space>->
   html: |
     setlocal noexpandtab
     setlocal ts=2 sts=2 sw=2 
