@@ -45,7 +45,7 @@ nnoremap <C-l> $
 vnoremap <C-l> $
 
 if has('termguicolors')
-    set termguicolors
+	set termguicolors
 endif
 
 augroup VIMRC
