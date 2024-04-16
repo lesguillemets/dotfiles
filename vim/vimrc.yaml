@@ -104,6 +104,16 @@ plugin:
     after: |
       let g:highlightedyank_highlight_duration=60
 
+  luochen1990/rainbow:
+    before: |
+      let g:rainbow_active = 1
+    after: |
+      let g:rainbow_conf = { 'separately': {} }
+      let g:rainbow_conf['separately']['markdown'] = {
+       \ "parentheses_options": "",
+       \ "guifgs": ["CadetBlue2", "LightBlue2", "Violet", "khaki2", "PaleGreen2", "tomato2"]
+       \ }
+
   easymotion/vim-easymotion:
     filetype:
       - html
