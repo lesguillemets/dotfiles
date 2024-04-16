@@ -75,3 +75,5 @@ if has('vim_starting')
 endif
 filetype plugin indent on
 syntax enable
+
+" vim: set noexpandtab ts=4 sw=4 sts=4 fdm=marker fmr=<<<,>>> :
