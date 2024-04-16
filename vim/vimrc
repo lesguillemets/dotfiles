@@ -48,6 +48,20 @@ if has('termguicolors')
     set termguicolors
 endif
 
+augroup VIMRC
+	autocmd!
+	autocmd ColorScheme * hi ExtraWhiteSpace ctermbg=darkgrey guibg=darkgrey
+	autocmd ColorScheme * hi ZenkakuSpace ctermbg=white guibg=white
+	autocmd BufEnter * call s:syntax_additional()
+augroup END
+function! s:syntax_additional()
+	let l:matches = [
+				\ matchadd("ZenkakuSpace", '　', 0),
+				\ matchadd('ExtraWhiteSpace', '\s\+$',0),
+				\ ]
+	return l:matches
+endfunction
+
 augroup MiVLive
 	autocmd!
 	autocmd BufWritePost .vimrc.yaml call system('miv generate')
