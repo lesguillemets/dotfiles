@@ -1,4 +1,6 @@
 plugin:
+  # Basal Editing <<<
+  ## Asyncomplete
   prabirshrestha/asyncomplete.vim:
     after: |
       inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
@@ -44,6 +46,8 @@ plugin:
         \   'show_source_kind': 1,
         \ },
         \ }))
+
+  ## LSP
   prabirshrestha/vim-lsp:
     dependon:
       - asyncomplete
@@ -77,6 +81,7 @@ plugin:
       - lsp
 
 
+  ### ALE
   dense-analysis/ale:
     dependon:
       - vim-lsp-ale
@@ -86,12 +91,13 @@ plugin:
       let g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰', '│', '─']
       let g:ale_keep_list_window_open = 1
       let g:ale_open_list = 1
-
   rhysd/vim-lsp-ale:
     loadbefore:
       - ale
       - lsp
+  # >>>
 
+  # Editing <<<
   cohama/lexima.vim: {}
 
   ctrlpvim/ctrlp.vim:
@@ -101,13 +107,14 @@ plugin:
       let g:ctrlp_custom_ignore.file = '\v\.(hi|o|out|jsmod|vo|v\.d|glob|pyc)$'
       let g:ctrlp_custom_ignore.dir = '\v[\/](\.stack-work|target|\.cabal-sandbox)$'
       let g:ctrlp_show_hidden = 1
-
   mattn/ctrlp-matchfuzzy:
     dependon:
       - ctrlp
     after: |
       let g:ctrlp_match_func = {'match': 'ctrlp_matchfuzzy#matcher'}
+  # >>>
 
+  # Filetypes <<<
   mattn/emmet-vim:
     filetype:
       - html
@@ -126,12 +133,16 @@ plugin:
 
   rhysd/committia.vim: {}
 
+  # >>>
+
+  # Appearance <<<
   itchyny/lightline.vim:
     before: |
       let g:lightline = {
         \ 'colorscheme': 'jellybeans',
         \ }
 
+  ## Colourschemes
   nanotech/jellybeans.vim:
     after: |
       let g:jellybeans_use_term_italics = 1
@@ -149,6 +160,7 @@ plugin:
 
   rhysd/vim-color-spring-night: {}
   preservim/vim-colors-pencil: {}
+  # >>>
 
 after: |
   colorscheme jellybeans
@@ -166,3 +178,5 @@ filetype:
     let g:markdown_recommended_style=0
     setlocal noexpandtab
     setlocal ts=2 sts=2 sw=2 
+
+# vim: set expandtab ts=2 sw=2 sts=2 fdm=marker fmr=<<<,>>> :
