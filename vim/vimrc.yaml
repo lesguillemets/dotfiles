@@ -101,7 +101,7 @@ plugin:
   cohama/lexima.vim: {}
 
   machakann/vim-highlightedyank:
-    before: |
+    after: |
       let g:highlightedyank_highlight_duration=60
 
   ## Browsing
@@ -133,7 +133,7 @@ plugin:
       augroup END
 
   rust-lang/rust.vim:
-    before: |
+    after: |
       let g:rustfmt_autosave = 1
 
 
