@@ -213,10 +213,6 @@ plugin:
       if has('termguicolors') && &termguicolors
           let g:jellybeans_overrides['background']['guibg'] = 'none'
       endif
-      augroup JellyJelly
-        autocmd!
-        autocmd GUIEnter let g:jellybeans_overrides['background'] = {}
-      augroup END
   sainnhe/everforest:
     after: |
       let g:everforest_transparent_background=1
@@ -227,6 +223,15 @@ plugin:
 
 after: |
   colorscheme jellybeans
+  function! s:jelly_on_gui() abort
+    let g:jellybeans_overrides['background'] = {}
+    call lightline#init()
+    colorscheme jellybeans
+  endfunction
+  augroup JellyJelly
+    autocmd!
+    autocmd GUIEnter * call s:jelly_on_gui()
+  augroup END
 
 filetype:
   rust: |
