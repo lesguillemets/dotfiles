@@ -1,1 +1,5 @@
 set bg=dark
+
+set guifontwide=BIZ\ UD\ Gothic\ 12
+set guifont=Cascadia\ Mono\ 12
+echom "fm"
