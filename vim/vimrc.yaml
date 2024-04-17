@@ -225,8 +225,9 @@ after: |
   colorscheme jellybeans
   function! s:jelly_on_gui() abort
     let g:jellybeans_overrides['background'] = {}
-    call lightline#init()
     colorscheme jellybeans
+    call lightline#init()
+    call lightline#update()
   endfunction
   augroup JellyJelly
     autocmd!
