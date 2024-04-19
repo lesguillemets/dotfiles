@@ -38,11 +38,14 @@ set splitright splitbelow
 nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
 " often misfires
 nnoremap <silent> <F1> <Nop>
+nnoremap s <Nop>
+
 " 'stronger' h and l.
 nnoremap <C-h> ^
 vnoremap <C-h> ^
 nnoremap <C-l> $
 vnoremap <C-l> $
+
 
 if has('termguicolors')
 	set termguicolors
