@@ -75,6 +75,12 @@ plugin:
   mattn/vim-lsp-settings:
     dependon:
       - lsp
+    after: |
+      let g:lsp_settings = {}
+#       let g:lsp_settings['rust-analyzer'] = {
+#         \ 'initialization_options': {'check' : { 'command' : "clippy"}}
+#         \ }
+
   prabirshrestha/asyncomplete-lsp.vim:
     dependon:
       - asyncomplete
@@ -91,6 +97,7 @@ plugin:
       let g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰', '│', '─']
       let g:ale_keep_list_window_open = 1
       let g:ale_open_list = 1
+      let g:ale_rust_cargo_use_clippy = 1
   rhysd/vim-lsp-ale:
     loadbefore:
       - ale
