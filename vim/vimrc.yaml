@@ -114,6 +114,13 @@ plugin:
 
   kshenoy/vim-signature: {}
 
+  t9md/vim-quickhl:
+    after: |
+      nmap <Space>m <Plug>(quickhl-manual-this)
+      xmap <Space>m <Plug>(quickhl-manual-this)
+      nmap <Space>M <Plug>(quickhl-manual-reset)
+      xmap <Space>M <Plug>(quickhl-manual-reset)
+
   luochen1990/rainbow:
     before: |
       let g:rainbow_active = 1
