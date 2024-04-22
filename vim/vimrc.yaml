@@ -176,6 +176,23 @@ plugin:
       - ctrlp
     after: |
       let g:ctrlp_match_func = {'match': 'ctrlp_matchfuzzy#matcher'}
+
+  vim-skk/skkeleton:
+    enable: |
+      expand("$VIM_ENABLE_SKKELETON") == "1" && executable("deno")
+    dependon:
+      - denops
+    after: |
+      imap <C-j> <Plug>(skkeleton-enable)
+      cmap <C-j> <Plug>(skkeleton-enable)
+      call skkeleton#config({ 'globalDictionaries': ['~/.skk/SKK-JISYO.L'] })
+  vim-denops/denops.vim:
+    enable: |
+      expand("$VIM_ENABLE_SKKELETON") == "1" && executable("deno")
+    loadbefore:
+      - skkeleton
+
+
   # >>>
 
   # Filetypes <<<
