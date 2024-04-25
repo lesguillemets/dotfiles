@@ -130,6 +130,7 @@ plugin:
        \ "parentheses_options": "",
        \ "guifgs": ["CadetBlue2", "LightBlue2", "Violet", "khaki2", "PaleGreen2", "tomato2"]
        \ }
+      let g:rainbow_conf['separately']['html'] = { }
 
   kana/vim-repeat: {}
 
