@@ -111,6 +111,7 @@ plugin:
   machakann/vim-highlightedyank:
     after: |
       let g:highlightedyank_highlight_duration=60
+      let g:highlightedyank_highlight_in_visual = 0
 
   kshenoy/vim-signature: {}
 
