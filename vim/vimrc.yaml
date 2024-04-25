@@ -234,9 +234,27 @@ plugin:
   # Appearance <<<
   itchyny/lightline.vim:
     before: |
+      function! LightLinePath()
+        return fnamemodify(getcwd(), ':~')
+      endfunction
       let g:lightline = {
         \ 'colorscheme': 'jellybeans',
+        \ 'component_function': { 'path': 'LightLinePath'}
         \ }
+      let g:lightline.active = {
+        \ 'left': [ [ 'mode', 'paste' ],
+        \           [ 'readonly', 'filename', 'path', 'modified' ] ],
+        \ 'right': [ [ 'lineinfo' ],
+        \            [ 'percent' ],
+        \            [ 'fileformat', 'fileencoding', 'filetype' ] ] }
+      let g:lightline.inactive = {
+        \ 'left': [ [ 'absolutepath', 'modified' ] ],
+        \ 'right': [ [ 'lineinfo' ],
+        \            [ 'percent' ] ] }
+      let g:lightline.tabline = {
+        \ 'left': [ [ 'tabs' ] ],
+        \ 'right': [ [ 'close' ] ] }
+
 
   ## Colourschemes
   nanotech/jellybeans.vim:
