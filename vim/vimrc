@@ -40,11 +40,34 @@ nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
 nnoremap <silent> <F1> <Nop>
 nnoremap s <Nop>
 
+" I would just yy
+nnoremap Y y$
+
 " 'stronger' h and l.
 nnoremap <C-h> ^
 vnoremap <C-h> ^
 nnoremap <C-l> $
 vnoremap <C-l> $
+
+" search for the text selected in visual mode at the cost of the l register.
+" from : http://memo.officebrook.net/20091022.html
+" via http://labs.timedia.co.jp/2014/09/learn-about-vim-in-the-workplace.html
+vnoremap * "ly:let @/ = @l<CR>n
+
+" set working directory to the current file
+nnoremap ,cd :lcd %:p:h <CR>
+
+" Paste and fix indentation.
+" cf: github:gregstallings/vimfiles/vimrc
+nnoremap <Leader>p p`[v`]=
+nnoremap <Leader>P P`[v`]=
+
+" Paste what is yanked in C-v mode as independent lines.
+function! MakeLineWise()
+    call setreg(v:register, getreg(),'l')
+endfunction
+nnoremap <silent> ,p :<C-u>call MakeLineWise()<CR>p
+nnoremap <silent> ,P :<C-u>call MakeLineWise()<CR>P
 
 
 if has('termguicolors')
