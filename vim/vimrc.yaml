@@ -221,6 +221,13 @@ plugin:
     after: |
       let g:rustfmt_autosave = 1
 
+  lervag/vimtex:
+    filetype:
+      - tex
+      - plaintex
+      - latex
+    before: |
+      let g:vimtex_syntax_conceal_disable = 1
 
   rhysd/committia.vim:
     after: |
