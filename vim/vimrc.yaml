@@ -54,6 +54,9 @@ plugin:
     dependon:
       - asyncomplete
       - vim-lsp-ale
+    before: |
+      let g:lsp_format_sync_timeout = 1000
+      let g:lsp_diagnostics_enabled = 0
     after: |
       function! s:on_lsp_buffer_enabled() abort
           setlocal omnifunc=lsp#complete
@@ -67,8 +70,6 @@ plugin:
           nmap <buffer> [g <plug>(lsp-previous-diagnostic)
           nmap <buffer> ]g <plug>(lsp-next-diagnostic)
           nmap <buffer> K <plug>(lsp-hover)
-          let g:lsp_format_sync_timeout = 1000
-          let g:lsp_diagnostics_float_cursor = 1
       endfunction
       augroup lsp_install
           autocmd!
