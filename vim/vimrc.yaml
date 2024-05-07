@@ -77,6 +77,8 @@ plugin:
       - lsp
     after: |
       let g:lsp_settings = {}
+      let g:lsp_settings['texlab'] = {'disabled':1}
+      let g:lsp_settings['digestif'] = {'disabled':1}
 #       let g:lsp_settings['rust-analyzer'] = {
 #         \ 'initialization_options': {'check' : { 'command' : "clippy"}}
 #         \ }
@@ -172,7 +174,29 @@ plugin:
 
   mhinz/vim-signify: {}
 
-  ## Browsing
+  ## snipppet
+  hrsh7th/vim-vsnip:
+    after: |
+      " expand
+      imap <expr> <C-j>  vsnip#expandable() ? '<Plug>(vsnip-expand)'     : '<C-j>'
+      smap <expr> <C-j>  vsnip#expandable() ? '<Plug>(vsnip-expand)'     : '<C-j>'
+      " Expand or jump
+      imap <expr> <F3>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<F3>'
+      smap <expr> <F3>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<F3>'
+      " Jump forward or backward
+      imap <expr> <F2>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<F2>'
+      smap <expr> <F2>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<F2>'
+      imap <expr> <F1> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<F1>'
+      smap <expr> <F1> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<F1>'
+
+  hrsh7th/vim-vsnip-integ:
+    dependon:
+      - vim-vsnip
+
+  rafamadriz/friendly-snippets:
+    dependon: vim-vsnip
+
+  ## Browing
   ctrlpvim/ctrlp.vim:
     before: |
       let g:ctrlp_follow_symlinks = 1
