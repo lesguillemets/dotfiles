@@ -196,6 +196,8 @@ plugin:
   hrsh7th/vim-vsnip-integ:
     dependon:
       - vim-vsnip
+      - asyncomplete
+      - lsp
 
   rafamadriz/friendly-snippets:
     dependon: vim-vsnip
