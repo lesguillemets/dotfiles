@@ -233,6 +233,7 @@ plugin:
     loadbefore:
       - skkeleton
 
+  thinca/vim-quickrun: {}
 
   # >>>
 
