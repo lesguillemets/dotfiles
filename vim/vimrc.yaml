@@ -105,6 +105,7 @@ plugin:
       let g:ale_rust_cargo_use_clippy = 1
       let g:ale_keep_preview_open = 1
       let g:ale_lint_on_text_changed = 0
+      let g:ale_lint_on_insert_leave = 0
   rhysd/vim-lsp-ale:
     loadbefore:
       - ale
