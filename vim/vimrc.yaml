@@ -300,7 +300,7 @@ plugin:
   nanotech/jellybeans.vim:
     after: |
       let g:jellybeans_use_term_italics = 1
-      let g:jellybeans_overrides = {'background': { 'ctermbg': 'none', '256ctermbg': 'none' }}
+      let g:jellybeans_overrides = {'background': { 'ctermbg': 'none', '256ctermbg': 'none' }, 'Visual': {'ctermbg': '73', 'guibg': '008082' } }
       if has('termguicolors') && &termguicolors
           let g:jellybeans_overrides['background']['guibg'] = 'none'
       endif
