@@ -187,6 +187,8 @@ plugin:
 
   mhinz/vim-signify: {}
 
+  liuchengxu/vista.vim: {}
+
   ## snipppet
   hrsh7th/vim-vsnip:
     after: |
@@ -209,6 +211,9 @@ plugin:
       - lsp
 
   rafamadriz/friendly-snippets:
+    dependon: vim-vsnip
+
+  lesguillemets/kagisnippets:
     dependon: vim-vsnip
 
   ## Browing
@@ -291,7 +296,7 @@ plugin:
         \ }
       let g:lightline.active = {
         \ 'left': [ [ 'mode', 'paste' ],
-        \           [ 'readonly', 'filename', 'path', 'modified' ] ],
+        \           [ 'readonly', 'relativepath', 'path', 'modified' ] ],
         \ 'right': [ [ 'lineinfo' ],
         \            [ 'percent' ],
         \            [ 'fileformat', 'fileencoding', 'filetype' ] ] }
