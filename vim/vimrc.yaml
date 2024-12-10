@@ -113,7 +113,7 @@ plugin:
     before: |
       augroup LSPALE
       autocmd!
-      autocmd FileType typescript,javascript let g:ale_disable_lsp=0
+      autocmd FileType typescript,javascript,python let g:ale_disable_lsp=0
       augroup END
     after: |
       let g:ale_linters = { 'typescript': ['biome'] }
