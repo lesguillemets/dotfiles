@@ -317,12 +317,19 @@ plugin:
       if has('termguicolors') && &termguicolors
           let g:jellybeans_overrides['background']['guibg'] = 'none'
       endif
+
   sainnhe/everforest:
     after: |
       let g:everforest_transparent_background=1
 
   rhysd/vim-color-spring-night: {}
   preservim/vim-colors-pencil: {}
+  romainl/Apprentice: {}
+  jeetsukumaran/vim-nefertiti: {}
+  karoliskoncevicius/moonshine-vim: {}
+
+
+
   # >>>
 
 after: |
