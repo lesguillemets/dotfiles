@@ -222,7 +222,7 @@ plugin:
       let g:ctrlp_follow_symlinks = 1
       let g:ctrlp_custom_ignore = {}
       let g:ctrlp_custom_ignore.file = '\v\.(hi|o|out|jsmod|vo|v\.d|glob|pyc)$'
-      let g:ctrlp_custom_ignore.dir = '\v[\/](\.stack-work|target|\.cabal-sandbox)$'
+      let g:ctrlp_custom_ignore.dir = '\v[\/](\.stack-work|target|\.cabal-sandbox|node_modules|\.git)$'
       let g:ctrlp_show_hidden = 1
 
   mattn/ctrlp-matchfuzzy:
