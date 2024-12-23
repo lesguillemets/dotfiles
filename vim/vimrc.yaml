@@ -281,6 +281,13 @@ plugin:
         setlocal spell
       endfunction
 
+  leafOfTree/vim-matchtag:
+    filetype:
+      - html
+      - xml
+    before: |
+      let g:vim_matchtag_enable_by_default = 1
+      let g:vim_matchtag_files = '*.html,*.xml'
 
   # >>>
 
