@@ -1,0 +1,369 @@
+plugin:
+  # Basal Editing <<<
+  ## Asyncomplete
+  prabirshrestha/asyncomplete.vim:
+    before: |
+      let g:asyncomplete_min_chars = 2
+    after: |
+      inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+      inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+      noremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+      inoremap <expr> <cr>   pumvisible() ? asyncomplete#close_popup() . "\<cr>" : "\<cr>"
+  prabirshrestha/asyncomplete-file.vim:
+    dependon:
+      - asyncomplete
+    after: |
+      au User asyncomplete_setup call asyncomplete#register_source(
+        \ asyncomplete#sources#file#get_source_options({
+        \ 'name': 'file',
+        \ 'allowlist': ['*'],
+        \ 'priority': 10,
+        \ 'completor': function('asyncomplete#sources#file#completor')
+        \ }))
+  prabirshrestha/asyncomplete-buffer.vim:
+    dependon:
+      - asyncomplete
+    after: |
+      call asyncomplete#register_source(
+          \ asyncomplete#sources#buffer#get_source_options({
+          \ 'name': 'buffer',
+          \ 'allowlist': ['*'],
+          \ 'blocklist': [],
+          \ 'completor': function('asyncomplete#sources#buffer#completor'),
+          \ 'config': {
+          \    'max_buffer_size': 5000000,
+          \  },
+          \ }))
+  yami-beta/asyncomplete-omni.vim:
+    dependon:
+      - asyncomplete
+    after: |
+      autocmd User asyncomplete_setup call asyncomplete#register_source(
+        \ asyncomplete#sources#omni#get_source_options({
+        \ 'name': 'omni',
+        \ 'allowlist': ['*'],
+        \ 'blocklist': ['c', 'cpp', 'html'],
+        \ 'completor': function('asyncomplete#sources#omni#completor'),
+        \ 'config': {
+        \   'show_source_kind': 1,
+        \ },
+        \ }))
+
+  ## LSP
+  prabirshrestha/vim-lsp:
+    dependon:
+      - asyncomplete
+      - vim-lsp-ale
+    before: |
+      let g:lsp_format_sync_timeout = 1000
+      let g:lsp_diagnostics_enabled = 0
+    after: |
+      function! s:on_lsp_buffer_enabled() abort
+          setlocal omnifunc=lsp#complete
+          setlocal signcolumn=yes
+          if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+          nmap <buffer> gd <plug>(lsp-definition)
+          nmap <buffer> gs <plug>(lsp-document-symbol-search)
+          nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
+          nmap <buffer> gr <plug>(lsp-references)
+          nmap <buffer> <leader>rn <plug>(lsp-rename)
+          nmap <buffer> [g <plug>(lsp-previous-diagnostic)
+          nmap <buffer> ]g <plug>(lsp-next-diagnostic)
+          nmap <buffer> K <plug>(lsp-hover)
+      endfunction
+      augroup lsp_install
+          autocmd!
+          autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+      augroup END
+  mattn/vim-lsp-settings:
+    dependon:
+      - lsp
+    after: |
+      let g:lsp_settings = {}
+      let g:lsp_settings['texlab'] = {'disabled':1}
+      let g:lsp_settings['digestif'] = {'disabled':1}
+#       let g:lsp_settings['rust-analyzer'] = {
+#         \ 'initialization_options': {'check' : { 'command' : "clippy"}}
+#         \ }
+
+  prabirshrestha/asyncomplete-lsp.vim:
+    dependon:
+      - asyncomplete
+      - lsp
+
+
+  ### ALE
+  lesguillemets/ale:
+    dependon:
+      - vim-lsp-ale
+    before: |
+      let g:ale_cursor_detail = 1
+      let g:ale_floating_preview = 0
+      let g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰', '│', '─']
+      let g:ale_keep_list_window_open = 1
+      let g:ale_open_list = 1
+      let g:ale_rust_cargo_use_clippy = 1
+      let g:ale_keep_preview_open = 1
+      let g:ale_lint_on_text_changed = 0
+      let g:ale_lint_on_insert_leave = 0
+  rhysd/vim-lsp-ale:
+    loadbefore:
+      - ale
+      - lsp
+    before: |
+      augroup LSPALE
+      autocmd!
+      autocmd FileType typescript,javascript,python let g:ale_disable_lsp=0
+      augroup END
+    after: |
+      let g:ale_linters = { 'typescript': ['biome'] }
+      let g:ale_biome_executable = 'npx biome'
+  # >>>
+
+  # Editing <<<
+  cohama/lexima.vim: {}
+
+  machakann/vim-highlightedyank:
+    after: |
+      let g:highlightedyank_highlight_duration=60
+      let g:highlightedyank_highlight_in_visual = 0
+
+  kshenoy/vim-signature: {}
+
+  t9md/vim-quickhl:
+    after: |
+      nmap <Space>m <Plug>(quickhl-manual-this)
+      xmap <Space>m <Plug>(quickhl-manual-this)
+      nmap <Space>M <Plug>(quickhl-manual-reset)
+      xmap <Space>M <Plug>(quickhl-manual-reset)
+
+  luochen1990/rainbow:
+    before: |
+      let g:rainbow_active = 1
+    after: |
+      let g:rainbow_conf = { 'separately': {} }
+      let g:rainbow_conf['separately']['markdown'] = {
+       \ "parentheses_options": "",
+       \ "guifgs": ["CadetBlue2", "LightBlue2", "Violet", "khaki2", "PaleGreen2", "tomato2"]
+       \ }
+      let g:rainbow_conf['separately']['html'] = { }
+
+  kana/vim-repeat: {}
+
+  tyru/caw.vim:
+    dependon: repeat
+    after: |
+      nmap <Leader>c <Plug>(caw:hatpos:toggle)
+      vmap <Leader>c <Plug>(caw:hatpos:toggle)
+
+  # let's see how this compares to rhysd/vim-operator-surround
+  machakann/vim-sandwich: {}
+
+  ## Textobjs
+  kana/vim-textobj-user: {}
+  rhysd/vim-textobj-wiw:
+    dependon: textobj-user
+    mapmode:
+      - o
+      - v
+    mapping:
+      - am
+      - im
+
+  easymotion/vim-easymotion:
+    filetype:
+      - html
+      - markdown
+      - latex
+      - tex
+      - help
+    after: |
+      map <Leader> <Plug>(easymotion-prefix)
+      map <Leader>l <Plug>(easymotion-lineforward)
+      map <Leader>h <Plug>(easymotion-linebackward)
+      let g:EasyMotion_use_migemo = 1
+      let g:EasyMotion_smartcase = 1
+      let g:EasyMotion_startofline = 0
+
+  mhinz/vim-signify: {}
+
+  liuchengxu/vista.vim: {}
+
+  ## snipppet
+  hrsh7th/vim-vsnip:
+    after: |
+      " expand
+      imap <expr> <C-j>  vsnip#expandable() ? '<Plug>(vsnip-expand)'     : '<C-j>'
+      smap <expr> <C-j>  vsnip#expandable() ? '<Plug>(vsnip-expand)'     : '<C-j>'
+      " Expand or jump
+      imap <expr> <F3>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<F3>'
+      smap <expr> <F3>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<F3>'
+      " Jump forward or backward
+      imap <expr> <F2>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<F2>'
+      smap <expr> <F2>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<F2>'
+      imap <expr> <F1> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<F1>'
+      smap <expr> <F1> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<F1>'
+
+  hrsh7th/vim-vsnip-integ:
+    dependon:
+      - vim-vsnip
+      - asyncomplete
+      - lsp
+
+  rafamadriz/friendly-snippets:
+    dependon: vim-vsnip
+
+  lesguillemets/kagisnippets:
+    dependon: vim-vsnip
+
+  ## Browing
+  ctrlpvim/ctrlp.vim:
+    before: |
+      let g:ctrlp_follow_symlinks = 1
+      let g:ctrlp_custom_ignore = {}
+      let g:ctrlp_custom_ignore.file = '\v\.(hi|o|out|jsmod|vo|v\.d|glob|pyc)$'
+      let g:ctrlp_custom_ignore.dir = '\v[\/](\.stack-work|target|\.cabal-sandbox|node_modules|\.git)$'
+      let g:ctrlp_show_hidden = 1
+
+  mattn/ctrlp-matchfuzzy:
+    dependon:
+      - ctrlp
+    after: |
+      let g:ctrlp_match_func = {'match': 'ctrlp_matchfuzzy#matcher'}
+
+  vim-skk/skkeleton:
+    enable: |
+      expand("$VIM_ENABLE_SKKELETON") == "1" && executable("deno")
+    dependon:
+      - denops
+    after: |
+      imap <C-j> <Plug>(skkeleton-enable)
+      cmap <C-j> <Plug>(skkeleton-enable)
+      call skkeleton#config({ 'globalDictionaries': ['~/.skk/SKK-JISYO.L'] })
+  vim-denops/denops.vim:
+    enable: |
+      expand("$VIM_ENABLE_SKKELETON") == "1" && executable("deno")
+    loadbefore:
+      - skkeleton
+
+  thinca/vim-quickrun: {}
+
+  # >>>
+
+  # Filetypes <<<
+  mattn/emmet-vim:
+    filetype:
+      - html
+      - css
+    before: |
+      let g:user_emmet_install_global = 0
+      augroup EMMET
+      autocmd!
+      autocmd FileType html,css EmmetInstall
+      augroup END
+
+  rust-lang/rust.vim:
+    after: |
+      let g:rustfmt_autosave = 1
+
+  lervag/vimtex:
+    filetype:
+      - tex
+      - plaintex
+      - latex
+    before: |
+      let g:vimtex_syntax_conceal_disable = 1
+
+  rhysd/committia.vim:
+    after: |
+      let g:committia_hooks = {}
+      function! g:committia_hooks.edit_open(info)
+        setlocal spell
+      endfunction
+
+  leafOfTree/vim-matchtag:
+    filetype:
+      - html
+      - xml
+    before: |
+      let g:vim_matchtag_enable_by_default = 1
+      let g:vim_matchtag_files = '*.html,*.xml'
+
+  # >>>
+
+  # Appearance <<<
+  itchyny/lightline.vim:
+    before: |
+      function! LightLinePath()
+        return fnamemodify(getcwd(), ':~')
+      endfunction
+      let g:lightline = {
+        \ 'colorscheme': 'jellybeans',
+        \ 'component_function': { 'path': 'LightLinePath'}
+        \ }
+      let g:lightline.active = {
+        \ 'left': [ [ 'mode', 'paste' ],
+        \           [ 'readonly', 'relativepath', 'path', 'modified' ] ],
+        \ 'right': [ [ 'lineinfo' ],
+        \            [ 'percent' ],
+        \            [ 'fileformat', 'fileencoding', 'filetype' ] ] }
+      let g:lightline.inactive = {
+        \ 'left': [ [ 'absolutepath', 'modified' ] ],
+        \ 'right': [ [ 'lineinfo' ],
+        \            [ 'percent' ] ] }
+      let g:lightline.tabline = {
+        \ 'left': [ [ 'tabs' ] ],
+        \ 'right': [ [ 'close' ] ] }
+
+
+  ## Colourschemes
+  nanotech/jellybeans.vim:
+    after: |
+      let g:jellybeans_use_term_italics = 1
+      let g:jellybeans_overrides = {'background': { 'ctermbg': 'none', '256ctermbg': 'none' }, 'Visual': {'ctermbg': '73', 'guibg': '008082' } }
+      if has('termguicolors') && &termguicolors
+          let g:jellybeans_overrides['background']['guibg'] = 'none'
+      endif
+
+  sainnhe/everforest:
+    after: |
+      let g:everforest_transparent_background=1
+
+  rhysd/vim-color-spring-night: {}
+  preservim/vim-colors-pencil: {}
+  romainl/Apprentice: {}
+  jeetsukumaran/vim-nefertiti: {}
+  karoliskoncevicius/moonshine-vim: {}
+
+
+
+  # >>>
+
+after: |
+  colorscheme jellybeans
+  function! s:jelly_on_gui() abort
+    let g:jellybeans_overrides['background'] = {}
+    colorscheme jellybeans
+    call lightline#init()
+    call lightline#update()
+  endfunction
+  augroup JellyJelly
+    autocmd!
+    autocmd GUIEnter * call s:jelly_on_gui()
+  augroup END
+
+filetype:
+  rust: |
+    inoremap <C-l> <Space>->
+  html: |
+    setlocal noexpandtab
+    setlocal ts=2 sts=2 sw=2
+  css: |
+    setlocal noexpandtab
+    setlocal ts=2 sts=2 sw=2
+  markdown: |
+    let g:markdown_recommended_style=0
+    setlocal noexpandtab
+    setlocal ts=2 sts=2 sw=2
+
+# vim: set expandtab ts=2 sw=2 sts=2 fdm=marker fmr=<<<,>>> :
