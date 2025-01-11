@@ -354,6 +354,8 @@ after: |
   augroup END
 
 filetype:
+  python: |
+    let b:ale_linters = ['pyright', 'ruff', 'mypy']
   rust: |
     inoremap <C-l> <Space>->
   html: |
