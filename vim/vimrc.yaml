@@ -70,6 +70,9 @@ plugin:
           nmap <buffer> [g <plug>(lsp-previous-diagnostic)
           nmap <buffer> ]g <plug>(lsp-next-diagnostic)
           nmap <buffer> K <plug>(lsp-hover)
+          nmap <buffer> gK <plug>(lsp-hover-preview)
+          nnoremap <buffer> <expr>g<C-f> lsp#scroll(+4)
+          nnoremap <buffer> <expr>g<C-d> lsp#scroll(-4)
       endfunction
       augroup lsp_install
           autocmd!
