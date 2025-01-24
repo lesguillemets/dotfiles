@@ -355,7 +355,6 @@ after: |
     autocmd!
     autocmd GUIEnter * call s:jelly_on_gui()
   augroup END
-  packadd! editorconfig
 
 filetype:
   python: |
