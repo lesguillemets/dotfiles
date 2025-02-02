@@ -3,7 +3,7 @@ plugin:
   ## Asyncomplete
   prabirshrestha/asyncomplete.vim:
     before: |
-      let g:asyncomplete_min_chars = 2
+      let g:asyncomplete_min_chars = 3
     after: |
       inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
       inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
