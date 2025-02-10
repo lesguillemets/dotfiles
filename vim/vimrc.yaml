@@ -252,7 +252,9 @@ plugin:
     loadbefore:
       - skkeleton
 
-  thinca/vim-quickrun: {}
+  thinca/vim-quickrun:
+    after: |
+      nnoremap <silent> <Leader>r :QuickRun<CR>
 
   # >>>
 
