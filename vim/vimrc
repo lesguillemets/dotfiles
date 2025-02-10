@@ -23,6 +23,8 @@ set timeout ttimeout timeoutlen=2000 ttimeoutlen=50
 set display=lastline  " defaults.vim sets it to truncate but this seems to make more sense
 set scrolloff=2
 
+set shortmess-=S
+
 set hlsearch incsearch
 
 set nrformats-=octal nrformats+=unsigned
