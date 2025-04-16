@@ -108,6 +108,7 @@ plugin:
       let g:ale_rust_cargo_use_clippy = 1
       let g:ale_fixers = {}
       let g:ale_fixers.typescript = ['biome']
+      let g:ale_fixers.python = ['ruff', 'ruff_format']
       let g:ale_keep_preview_open = 1
       let g:ale_lint_on_text_changed = 0
       let g:ale_lint_on_insert_leave = 0
@@ -363,6 +364,7 @@ after: |
 filetype:
   python: |
     let b:ale_linters = ['pyright', 'ruff', 'mypy']
+    let b:ale_fix_on_save = 1
   rust: |
     inoremap <C-l> <Space>->
   html: |
@@ -376,6 +378,6 @@ filetype:
     setlocal noexpandtab
     setlocal ts=2 sts=2 sw=2
   typescript: |
-    let g:ale_fix_on_save = 1
+    let b:ale_fix_on_save = 1
 
 # vim: set expandtab ts=2 sw=2 sts=2 fdm=marker fmr=<<<,>>> :
