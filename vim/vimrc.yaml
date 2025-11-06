@@ -177,6 +177,15 @@ plugin:
     mapping:
       - am
       - im
+  sgur/vim-textobj-parameter:
+    dependon: textobj-user
+    mapmode:
+      - o
+      - v
+    mapping:
+      - a,
+      - i,
+
 
   easymotion/vim-easymotion:
     filetype:
