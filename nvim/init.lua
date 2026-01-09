@@ -10,3 +10,8 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     vim.hl.on_yank({ higroup='Visual', timeout = 300 })
   end,
 })
+
+vim.diagnostic.config({
+  -- virtual_text = true,
+  virtual_lines = true
+})
