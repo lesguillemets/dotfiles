@@ -9,6 +9,21 @@ return {
         group = 'vim-fern-config',
         command = "nmap <buffer><nowait> l <Plug>(fern-action-expand)"
       })
+      vim.api.nvim_create_autocmd('FileType', {
+        pattern = { 'fern' },
+        group = 'vim-fern-config',
+        command = "nmap <buffer><nowait> <C-v> <Plug>(fern-action-open:vsplit)"
+      })
+      vim.api.nvim_create_autocmd('FileType', {
+        pattern = { 'fern' },
+        group = 'vim-fern-config',
+        command = "nmap <buffer><nowait> <C-x> <Plug>(fern-action-open:split)"
+      })
+      vim.api.nvim_create_autocmd('FileType', {
+        pattern = { 'fern' },
+        group = 'vim-fern-config',
+        command = "nmap <buffer><nowait> <C-t> <Plug>(fern-action-open:tabedit)"
+      })
       -- show dot files
       vim.g['fern#default_hidden'] = 1
     end
