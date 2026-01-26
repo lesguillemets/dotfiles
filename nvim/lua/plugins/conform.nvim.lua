@@ -4,6 +4,8 @@ return{
     formatters_by_ft = {
       python = { "ruff_format", "ruff_organize_imports" },
       rust = { "rustfmt", lsp_format = "fallback"},
+      javascript =  { "biome", lsp_format="fallback" },
+      typescript =  { "biome", lsp_format="fallback" },
     },
     format_on_save = {
       timeout_ms = 1000,
