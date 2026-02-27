@@ -32,6 +32,7 @@ set nrformats-=octal nrformats+=unsigned
 set wildmode=longest:list,full
 
 set ignorecase smartcase
+set tildeop
 
 set laststatus=2
 
