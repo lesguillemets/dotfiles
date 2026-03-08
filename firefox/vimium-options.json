@@ -1,0 +1,29 @@
+{
+  "exclusionRules": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {}
+  ],
+  "keyMappings": "# Insert your preferred key mappings here.\nunmap J\nunmap K\nmap J nextTab\nmap K previousTab\n\nmap gf LinkHints.activateModeToOpenInNewForegroundTab\nmap gp LinkHints.activateModeToOpenIncognito\n\nunmap d\nunmap x\nmap dd removeTab\nunmap u\nmap u restoreTab",
+  "settingsVersion": "2.4.0"
+}
