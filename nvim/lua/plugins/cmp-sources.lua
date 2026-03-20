@@ -8,6 +8,10 @@ return {
     dependencies = { "hrsh7th/nvim-cmp" },
   },
   {
+    "micangl/cmp-vimtex",
+    dependencies = { "hrsh7th/nvim-cmp" },
+  },
+  {
   'hrsh7th/cmp-vsnip',
     dependencies = { "hrsh7th/nvim-cmp", "hrsh7th/vim-vsnip" },
   }

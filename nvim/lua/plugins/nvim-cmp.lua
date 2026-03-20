@@ -24,6 +24,15 @@ return {
         { name = 'vsnip' }
       })
     })
+    cmp.setup.filetype('tex', {
+      sources = {
+        { name = 'nvim_lsp' },
+        { name = 'vimtex' },
+        { name = 'buffer' },
+        { name = 'nvim_lsp_signature_help' },
+        { name = 'vsnip' }
+      }
+    })
     end
 }
 
