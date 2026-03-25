@@ -1,0 +1,108 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.40/schema.json",
+  "app_specific_configuration_path": "$Env:USERPROFILE/applications.json",
+  "window_hiding_behaviour": "Cloak",
+  "cross_monitor_move_behaviour": "Insert",
+  "default_workspace_padding": 0,
+  "default_container_padding": 0,
+  "border": true,
+  "border_width": 1,
+  "border_offset": -1,
+  "theme": {
+    "palette": "Base16",
+    "name": "Ashes",
+    "unfocused_border": "Base03",
+    "bar_accent": "Base0D"
+  },
+  "monitors": [
+    {
+      "workspaces": [
+        {
+          "name": "I",
+          "layout": "Grid"
+        },
+        {
+          "name": "II",
+          "layout": "BSP"
+        },
+        {
+          "name": "III",
+          "layout": "VerticalStack"
+        },
+        {
+          "name": "IV",
+          "layout": "HorizontalStack"
+        },
+        {
+          "name": "V",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "VI",
+          "layout": "Rows"
+        },
+        {
+          "name": "VII",
+          "layout": "RightMainVerticalStack"
+        }
+      ]
+    },
+    {
+      "workspaces": [
+        {
+          "name": "a",
+          "layout": "Grid"
+        },
+        {
+          "name": "b",
+          "layout": "BSP"
+        },
+        {
+          "name": "c",
+          "layout": "VerticalStack"
+        },
+      ]
+    },
+    {
+      "workspaces": [
+        {
+          "name": "a",
+          "layout": "Rows"
+        },
+        {
+          "name": "b",
+          "layout": "HorizontalStack"
+        },
+        {
+          "name": "c",
+          "layout": "Grid"
+        },
+      ]
+    },
+    {
+      "workspaces": [
+        {
+          "name": "1",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "2",
+          "layout": "VerticalStack"
+        },
+        {
+          "name": "3",
+          "layout": "BSP"
+        },
+      ]
+    }
+  ],
+  "display_index_preferences": {
+    "0": "0",
+    "2": "131073",
+    "2": "37401094",
+    "3": "109854",
+    "3": "133433955",
+    "1": "131073",
+    "1": "97605032"
+  }
+}
