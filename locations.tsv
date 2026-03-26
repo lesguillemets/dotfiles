@@ -1,0 +1,5 @@
+filepath	make_link_at
+./editorconfig/editorconfig	~/.editorconfig
+./nvim/	~/.config/nvim/
+./uv/uv.toml	~/.config/uv/uv.toml
+./vim/	~/.vim/
