@@ -38,6 +38,8 @@ set laststatus=2
 
 set splitright splitbelow
 
+set spelllang=en_gb,cjk
+
 nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
 " often misfires
 nnoremap <silent> <F1> <Nop>
