@@ -60,7 +60,7 @@
         {
           "name": "c",
           "layout": "VerticalStack"
-        },
+        }
       ]
     },
     {
@@ -76,33 +76,34 @@
         {
           "name": "c",
           "layout": "Grid"
-        },
+        }
       ]
     },
     {
       "workspaces": [
         {
-          "name": "1",
-          "layout": "UltrawideVerticalStack"
+          "name": "x",
+          "layout": "UltrawideVerticalStack",
+          "layout_flip": "Horizontal",
+          "layout_options": {
+            "column_ratios": [0.4, 0.4, 0.2]
+          }
         },
         {
-          "name": "2",
+          "name": "y",
           "layout": "VerticalStack"
         },
         {
-          "name": "3",
-          "layout": "BSP"
-        },
+          "name": "z",
+          "layout": "Grid"
+        }
       ]
     }
   ],
   "display_index_preferences": {
     "0": "0",
-    "2": "131073",
-    "2": "37401094",
     "3": "109854",
-    "3": "133433955",
-    "1": "131073",
+    "2": "37401094",
     "1": "97605032"
   }
 }
