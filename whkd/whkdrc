@@ -31,10 +31,10 @@ alt + shift + l         : komorebic move right
 alt + shift + return    : komorebic promote
 
 # Stack windows
-RShift + left              : komorebic stack left
-RShift + down              : komorebic stack down
-RShift + up                : komorebic stack up
-RShift + right             : komorebic stack right
+alt + RShift + left              : komorebic stack left
+alt + RShift + down              : komorebic stack down
+alt + RShift + up                : komorebic stack up
+alt + RShift + right             : komorebic stack right
 alt + oem_1             : komorebic unstack # oem_1 is ;
 alt + oem_4             : komorebic cycle-stack previous # oem_4 is [
 alt + oem_6             : komorebic cycle-stack next # oem_6 is ]
