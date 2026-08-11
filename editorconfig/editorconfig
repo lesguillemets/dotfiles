@@ -23,3 +23,7 @@ indent_size = 2
 [webpack.config.js]
 indent_style = space
 indent_size = 2
+
+[*.lua]
+indent_style = space
+indent_size = 2
