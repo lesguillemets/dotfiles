@@ -21,3 +21,6 @@ tags
 # Persistent undo
 [._]*.un~
 
+# most likely it's a typo
+:q
+:q!
