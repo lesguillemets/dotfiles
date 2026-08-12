@@ -1,0 +1,55 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+
+format = '$username$hostname:$directory (\($git_branch$git_status\))($git_state)$character'
+
+palette = 'kagi'
+
+[palettes.kagi]
+prompt_green = '#b0ee90'
+prompt_orange = '#a34900'
+
+# --- green section ---
+
+[username]
+format = '[$user]($style)'
+style_user = 'prompt_green'
+style_root = 'red'
+show_always = true
+
+[hostname]
+format = '[@$hostname]($style)'
+style = 'prompt_green'
+ssh_only = false
+
+[directory]
+format = '[$path]($style)'
+style = 'prompt_green bold'
+truncation_length = 0
+truncate_to_repo = false
+home_symbol = '~'
+
+
+[git_branch]
+format = '[$branch]($style)'
+style = 'white bold'
+
+[git_status]
+format =' $modified$staged$untracked$ahead_behind'
+conflicted = '!'
+ahead = '>'
+behind = '<'
+up_to_date = '='
+staged = '+'
+untracked = '?'
+modified = '*'
+diverged = '⇕'
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style)]'
+style = 'prompt_orange bold'
+
+[character]
+success_symbol = '[\$](white)'
+error_symbol = '[\$](red)'
