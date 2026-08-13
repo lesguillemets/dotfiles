@@ -59,6 +59,7 @@ format = '[\($state( $progress_current of $progress_total)\)]($style)]'
 style = 'prompt_orange bold'
 
 [cmd_duration]
+min_time = 15_000
 format = ' {took [$duration]($style)} '
 style = 'yellow bold'
 # show_notifications = true
