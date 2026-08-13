@@ -9,6 +9,7 @@ palette = 'kagi'
 [palettes.kagi]
 prompt_green = '#b0ee90'
 prompt_orange = '#a34900'
+prompt_lightgrey = '#bbc0cc'
 
 # --- green section ---
 
@@ -60,8 +61,8 @@ style = 'prompt_orange bold'
 
 [cmd_duration]
 min_time = 15_000
-format = ' {took [$duration]($style)} '
-style = 'yellow bold'
+format = ' [{took $duration}]($style) '
+style = 'prompt_lightgrey'
 # show_notifications = true
 # min_time_to_notify = 45_000
 
