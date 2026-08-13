@@ -2,7 +2,7 @@
 
 add_newline = false
 
-format = '$username$hostname:$directory (\($git_branch$git_commit$git_status\))($git_state)$character'
+format = '$username$hostname:$directory (\($git_branch$git_commit$git_status\))($git_state)($cmd_duration)$character'
 
 palette = 'kagi'
 
@@ -57,6 +57,12 @@ diverged = '⇕'
 [git_state]
 format = '[\($state( $progress_current of $progress_total)\)]($style)]'
 style = 'prompt_orange bold'
+
+[cmd_duration]
+format = ' {took [$duration]($style)} '
+style = 'yellow bold'
+# show_notifications = true
+# min_time_to_notify = 45_000
 
 [character]
 success_symbol = '[\$](white)'
