@@ -1,0 +1,31 @@
+/* I might keep tabs now
+#main-window[tabsintitlebar="true"]:not([extradragspace="true"]) #TabsToolbar > .toolbar-items {
+	opacity: 0;
+	pointer-events: none;
+}
+#main-window:not([tabsintitlebar="true"]) #TabsToolbar {
+	visibility: collapse !important;
+}
+#main-window[tabsintitlebar="true"]:not([extradragspace="true"]) #TabsToolbar .titlebar-spacer {
+	border-inline-end: none;
+}
+
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
+	display: none;
+}
+*/
+
+#sidebar {
+	min-width: 0px !important;
+}
+
+
+/* https://www.reddit.com/r/firefox/comments/68jimo */
+#main-window[privatebrowsingmode="temporary"] #navigator-toolbox {
+	background-color: #CE85FF !important;
+}
+#main-window[privatebrowsingmode="temporary"] #nav-bar{
+	/*  might try #8d20ae */
+	background-color: #CE85FF !important;
+}
+
