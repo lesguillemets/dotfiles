@@ -14,7 +14,9 @@
 }
 
 @-moz-document domain("chatgpt.com") {
-	[data-message-author-role] {
+	[data-message-author-role],
+	#prompt-textarea,
+	#history {
 		font-family: "PreferNotoForJA", var(--font-sans) !important;
 	}
 }
