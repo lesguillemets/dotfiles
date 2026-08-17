@@ -1,0 +1,20 @@
+@font-face {
+	font-family: "PreferNotoForJA";
+	src:
+		local("Noto Sans CJK JP"),
+		local("Noto Sans JP");
+	unicode-range:
+		U+2E80-2EFF,
+		U+3000-30FF,
+		U+31F0-31FF,
+		U+3400-4DBF,
+		U+4E00-9FFF,
+		U+F900-FAFF,
+		U+FF00-FFEF;
+}
+
+@-moz-document domain("chatgpt.com") {
+	[data-message-author-role] {
+		font-family: "PreferNotoForJA", var(--font-sans) !important;
+	}
+}
