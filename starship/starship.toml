@@ -45,15 +45,17 @@ only_detached = true
 tag_disabled = false
 
 [git_status]
-format =' $modified$staged$untracked$ahead_behind'
+format =' $modified$staged$renamed$deleted$untracked$ahead_behind'
 conflicted = '!'
 ahead = '>'
 behind = '<'
 up_to_date = '='
 staged = '+'
+renamed = '+'
+deleted = '-'
 untracked = '?'
 modified = '*'
-diverged = '⇕'
+diverged = '<>'
 
 [git_state]
 format = '[\($state( $progress_current of $progress_total)\)]($style)]'
