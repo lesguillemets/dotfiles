@@ -1,0 +1,6 @@
+{
+    "lean4.alwaysAskBeforeInstallingLeanVersions": true,
+    "editor.formatOnSave": true,
+    "editor.fontFamily": "'Cascadia Code', 'Droid Sans Mono', monospace",
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true
+}
