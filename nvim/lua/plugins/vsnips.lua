@@ -31,6 +31,5 @@ return {
     end
   },
   { "hrsh7th/vim-vsnip-integ" },
-  { "rafamadriz/friendly-snippets" },
   { "lesguillemets/kagisnippets" },
 }
