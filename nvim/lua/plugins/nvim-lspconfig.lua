@@ -7,7 +7,7 @@ return {
       'hls',
       'lua_ls',
       'marksman',
-      'ts_ls'
+      'tsc'
     })
   end
 }
