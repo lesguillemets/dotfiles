@@ -7,6 +7,7 @@ return {
       'hls',
       'lua_ls',
       'marksman',
+      'biome',
       'tsc'
     })
   end
